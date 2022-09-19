@@ -1,8 +1,9 @@
+import CartItem from "./CartItems";
 
 function App() {
   return (
     <div className="App"> 
-      <h1>cart</h1>
+    < CartItem />
     </div>
   );
 }

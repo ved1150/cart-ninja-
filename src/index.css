@@ -7,11 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .cart-item {
-  display: inline-flex;
-  margin: 20px 10px;
+   display: flex;
+   justify-content: space-between;
 }
 .cart-item .right-block {
-  padding: 0 20px;
+  padding: 0 200px;
 }
 .cart-item-actions {
   margin-top: 20px;
