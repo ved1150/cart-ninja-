@@ -7,10 +7,15 @@ class CartItem extends React.Component{
             price : 1000,
             title : "phone" ,
              qty : 2,
-            //  img =""
+             img :`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/
+             JWAAAAA1BMVEWt2eZvScryAAAASElEQVR4nO3BMQEAAA
+             DCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+             AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC`
         }
+       
     }
         increaseQuantity =() => {
+
          this.setState((pre) => {
             return {
                 qty: pre.qty + 1
@@ -18,17 +23,13 @@ class CartItem extends React.Component{
          })
     }
     decreaseQuantity =() => {
-        this.setState((pre) => {
-            if(pre.qty ===0){
-                return {
-                    qty : 0
-                }
-            }
-            else{
+        if (this.state.qty === 0){
+            return ""
+        }
+         this.setState((pre) => {
            return {
                qty: pre.qty - 1
            } 
-        } 
         })
    }
    delete =() => {
@@ -41,14 +42,15 @@ class CartItem extends React.Component{
     }
 
     render(){
-        const {price ,Phone ,qty} =this.state
+        console.log("done")
+        const {price ,title ,qty} =this.state
         return(
             <div className="cart-item">
                 <div className="left-block">
                     <img style={styles.image} src={this.state.img}/>
                 </div>
                 <div className="right-block">
-                    <div style={{fontSize : 25}}>{Phone}</div>
+                    <div style={{fontSize : 25}}>{title}</div>
                     <div style={{color : "#777"}}>Rs :{price}</div>
                     <div style={{color : "#777"}}>Qty : {qty}</div>
                     <div className="cart-item-actions">
@@ -79,8 +81,8 @@ class CartItem extends React.Component{
 
 const styles ={
     image :{
-        height : 110,
-        margin : 110,
+        height : 50,
+        margin : 50,
         borderRadius : 4,
         backgroundColor: "#777"
     }
