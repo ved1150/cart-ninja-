@@ -1,19 +1,7 @@
 import React from "react"
 class CartItem extends React.Component{
 
-    constructor(){
-        super()
-        this.state = {
-            price : 1000,
-            title : "phone" ,
-             qty : 2,
-             img :`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/
-             JWAAAAA1BMVEWt2eZvScryAAAASElEQVR4nO3BMQEAAA
-             DCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-             AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC`
-        }
-       
-    }
+   
         increaseQuantity =() => {
 
          this.setState((pre) => {
@@ -42,12 +30,12 @@ class CartItem extends React.Component{
     }
 
     render(){
-        console.log("done")
-        const {price ,title ,qty} =this.state
+        console.log(this.props.products)
+        const {price ,title ,qty,img} =this.props.products
         return(
             <div className="cart-item">
                 <div className="left-block">
-                    <img style={styles.image} src={this.state.img}/>
+                    <img style={styles.image} src={img} alt=""/>
                 </div>
                 <div className="right-block">
                     <div style={{fontSize : 25}}>{title}</div>
@@ -58,17 +46,20 @@ class CartItem extends React.Component{
                         src="https://cdn-icons-png.flaticon.com/512/1828/1828925.png"
                         width ="25px" 
                         className="action-icons"
+                        alt="in"
                         onClick={this.increaseQuantity}
                         />
                         <img 
                         src="https://cdn-icons-png.flaticon.com/128/992/992683.png"  
                         width ="25px" 
                         className="action-icons" 
+                        alt="de"
                         onClick={this.decreaseQuantity}
                         />
                         <img 
                         src="https://cdn-icons-png.flaticon.com/128/3405/3405244.png"
                         width ="25px"
+                        alt="delete"
                         className="action-icons" 
                         onClick={this.delete}
                          />
