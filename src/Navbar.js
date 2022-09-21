@@ -6,13 +6,11 @@ const Navbar =(props) => {
             <div  style={styles.nav}>
                 <div style={styles.cartIconContainer}>
                     <img style={styles.cartIcon} src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt=""  />
-                    <spam style={styles.cartCount}>3</spam>
+                    <spam style={styles.cartCount}>{props.count}</spam>
                 </div>
             </div>
         )
     }
-
-
     const styles = {
         cartIcon: {
           height: 32,
