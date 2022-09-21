@@ -4,6 +4,7 @@ class CartItem extends React.Component{
 
     render(){
         const {price ,title ,qty,img} =this.props.products
+        const {products ,increase ,decrease ,deleteItem } = this.props
         return(
             <div className="cart-item">
                 <div className="left-block">
@@ -19,21 +20,21 @@ class CartItem extends React.Component{
                         width ="25px" 
                         className="action-icons"
                         alt="in"
-                        onClick={() => this.props.inc(this.props.products)}
+                        onClick={() => increase(products)}
                         />
                         <img 
                         src="https://cdn-icons-png.flaticon.com/128/992/992683.png"  
                         width ="25px" 
                         className="action-icons" 
                         alt="de"
-                        onClick={this.decreaseQuantity}
+                        onClick={() => decrease(products)}
                         />
                         <img 
                         src="https://cdn-icons-png.flaticon.com/128/3405/3405244.png"
                         width ="25px"
                         alt="delete"
                         className="action-icons" 
-                        onClick={this.delete}
+                        onClick={() => deleteItem(products.id)}
                          />
                     </div>
                 </div>
